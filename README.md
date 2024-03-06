@@ -5,7 +5,7 @@
 - Setup Custom Component
 
   ```bash
-  cd api-example-component && npm i && npm run build && prism component:publish --no-confirm
+  cd api-example-component && pnpm i && pnpm build && prism component:publish --no-confirm
   ```
 
 - Import integration
