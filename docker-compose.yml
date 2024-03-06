@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  opa:
+    image: prismaticio/on-prem-agent:1.0.1
+    env_file:
+      - .env
+    environment:
+      - APP_PORT=3000
+      - APP_HOST=host.docker.internal
+      - NAME=Acme API

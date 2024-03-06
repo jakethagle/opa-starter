@@ -1,0 +1,72 @@
+category: ''
+configPages:
+  - elements:
+      - type: configVar
+        value: Acme API
+    name: Configuration
+definitionVersion: 7
+description: ''
+documentation: ''
+endpointType: flow_specific
+flows:
+  - endpointSecurityType: customer_optional
+    isSynchronous: false
+    name: Flow 1
+    steps:
+      - action:
+          component:
+            isPublic: true
+            key: webhook-triggers
+            version: 9
+          key: webhook
+        description: ''
+        inputs:
+          body:
+            type: value
+            value: ''
+          contentType:
+            type: value
+            value: ''
+          headers:
+            type: complex
+            value: []
+          statusCode:
+            type: value
+            value: ''
+        isTrigger: true
+        name: Trigger
+      - action:
+          component:
+            isPublic: false
+            key: acmeHttpOpaExample
+            version: 1
+          key: getData
+        description: ''
+        inputs:
+          connection:
+            type: configVar
+            value: Acme API
+        name: Get Data
+name: OPA Starter
+requiredConfigVars:
+  - connection:
+      component:
+        isPublic: false
+        key: acmeHttpOpaExample
+        version: 1
+      key: myConnection
+    dataType: connection
+    inputs:
+      apiKey:
+        type: value
+        value: ''
+      host:
+        type: value
+        value: ''
+      port:
+        type: value
+        value: ''
+    key: Acme API
+    onPremiseConnectionConfig: allowed
+    orgOnly: false
+
