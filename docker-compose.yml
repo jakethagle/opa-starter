@@ -1,10 +1,8 @@
-version: "3.8"
+name: on-prem-agent
 services:
-  opa:
-    image: prismaticio/on-prem-agent:1.0.1
-    env_file:
-      - .env
-    environment:
-      - APP_PORT=3000
-      - APP_HOST=host.docker.internal
-      - NAME=Acme API
+  on-prem-agent:
+    image: prismaticio/on-prem-agent:1.0.2
+    restart: always
+    # Use "always" to start this service when the Docker engine starts
+    # or "unless-stopped" to require manual start/stop
+    env_file: ./.env
